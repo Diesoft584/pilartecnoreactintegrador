@@ -7,8 +7,8 @@ export const drawerMenu = [
     title: "pages",
     children: [
       {
-        title: "crud",
-        path: "/crud",
+        title: "create",
+        path: "/create",
       },
     ],
   },

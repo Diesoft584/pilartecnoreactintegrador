@@ -1,8 +1,9 @@
 import { Navigate, useRoutes } from "react-router-dom";
 import DashboardLayout from "./layouts/DashboardLayout";
 import NotFound from "./layouts/NotFound";
-import Dashboard from "./dashboard/Dashboard";
-import Crud from "./crud/Crud";
+import Create from "./create/Create";
+import Places from "./places/Places";
+import Edit from "./edit/Edit";
 
 const Routes = () => {
   return useRoutes([
@@ -10,12 +11,14 @@ const Routes = () => {
       path: "/",
       element: <DashboardLayout />,
       children: [
-        { path: "", element: <Dashboard /> },
-        { path: "/crud", element: <Crud /> },
+        { path: "", element: <Places /> },
+        { path: "/create", element: <Create /> },
+        { path: "/edit/:id", element: <Edit /> },
       ],
     },
     { path: "/404", element: <NotFound /> },
     { path: "*", element: <Navigate to="/404" replace /> },
   ]);
 };
+
 export default Routes;
